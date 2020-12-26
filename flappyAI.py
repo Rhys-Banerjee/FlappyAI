@@ -110,7 +110,7 @@ class Pipe:
     """
     Class which creates the Pipe object. Includes methods to set random heights, colision between the pipe and the bird, and movement.
     """
-    GAP = 200
+    GAP = 150
     VEL = 5
 
     def __init__(self, x):
