@@ -31,6 +31,9 @@ STAT_FONT = pygame.font.SysFont("comicsans", 50)
 pygame.display.set_icon(BIRD_IMGS[0])
 
 class Bird:
+    """
+    Bird class that contains methods for jumping, moving, masking, and drawing to screen.
+    """
     IMGS = BIRD_IMGS
     MAX_ROTATION = 25
     ROT_VEL = 20
@@ -47,6 +50,9 @@ class Bird:
         self.img = self.IMGS[0]
 
     def jump(self):
+        """
+        Jump with velocity of -8.5. Resets height.
+        """
         self.vel = -8.5
         self.tick_count = 0
         self.height = self.y
