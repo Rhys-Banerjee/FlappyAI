@@ -58,6 +58,9 @@ class Bird:
         self.height = self.y
     
     def move(self):
+        """
+        Works by tracking displacement.
+        """
         self.tick_count += 1
         d = self.vel*self.tick_count + 1.5*self.tick_count**2
         if d >= 16:
@@ -73,6 +76,9 @@ class Bird:
                 self.tilt -= self.ROT_VEL
 
     def draw(self, win):
+        """
+        Sets the images in order to properly animate the bird.
+        """
         self.img_count += 1
         if self.img_count < self.ANIMATION_TIME:
             self.img = self.IMGS[0]
@@ -95,9 +101,15 @@ class Bird:
         win.blit(rotated_image, new_rect.topleft)
 
     def get_mask(self):
+        """
+        Ensures proper collision between pipes.
+        """
         return pygame.mask.from_surface(self.img)
 
 class Pipe:
+    """
+    Class which creates the Pipe object. Includes methods to set random heights, colision between the pipe and the bird, and movement.
+    """
     GAP = 200
     VEL = 5
 
